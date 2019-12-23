@@ -19,6 +19,7 @@ const CreateAccount = props => {
             placeholder="Location(state)"
           />
           <input type="tel" name="phonenumber" placeholder="Phone Number" />
+          <input type="email" name="email" placeholder="Email" />
           <div className="register-title">
             <h3>Log In Information</h3>
           </div>
