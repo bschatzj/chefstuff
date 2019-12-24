@@ -11,10 +11,18 @@ const ChefDashboard = props => {
 
           <div className="chef-info">
             <h3>Personal Info</h3>
-            <span>Gordon Ramsay</span>
-            <span>Gordonram@email.com</span>
-            <span>Johnstone, UK</span>
-            <span>801-258-1545</span>
+            <span>
+              <i class="far fa-user"></i> Gordon Ramsay
+            </span>
+            <span>
+              <i class="far fa-envelope"></i> Gordonram@email.com
+            </span>
+            <span>
+              <i class="fas fa-location-arrow"></i> Johnstone, UK
+            </span>
+            <span>
+              <i class="fas fa-phone-alt"></i> 801-258-1545
+            </span>
           </div>
         </div>
 
