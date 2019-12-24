@@ -5,7 +5,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: silver;
+  background-color: #1f1e1e;
 }
 
 /* login */
@@ -13,6 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: silver;
   width: 100vw;
   height: 100vh;
 }
@@ -111,7 +112,6 @@ body {
 /* ChefDashboard */
 
 .dashboard-body {
-  background-color: #1f1e1e;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -205,6 +205,7 @@ body {
 .recipes-div {
   margin-top: 15%;
   height: 80%;
+  border: 2px solid red;
   h3 {
     color: #07fe20;
     text-align: left;
