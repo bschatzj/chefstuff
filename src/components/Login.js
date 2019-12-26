@@ -58,7 +58,10 @@ const Login = props => {
             onChange={handleChange}
           />
           <div>
-            <button>Log in</button>
+            {/* this link is temporary */}
+            <Link to="/chefdashboard">
+              <button>Log in</button>
+            </Link>
           </div>
           <div className="color-link">
             <Link
