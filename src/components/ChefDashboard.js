@@ -7,10 +7,21 @@ const ChefDashboard = props => {
         <div className="left-div">
           <div className="img-div">
             <img className="chef-img" src={Image} alt="Chef" />
+            <i
+              class="far fa-edit"
+              style={{
+                color: "white",
+                marginTop: "55%",
+                fontSize: "20px"
+              }}
+            ></i>
           </div>
 
           <div className="chef-info">
-            <h3>Personal Info</h3>
+            <h3>
+              Personal Info{" "}
+              <i class="far fa-edit" style={{ color: "white" }}></i>
+            </h3>
             <span>
               <i class="far fa-user"></i> Gordon Ramsay
             </span>
@@ -42,6 +53,10 @@ const ChefDashboard = props => {
               Stratford-upon-Avon, England. His restaurants have been awarded 16
               Michelin stars in total and currently hold a total of seven.
             </p>
+            <i
+              class="far fa-edit"
+              style={{ color: "white", fontSize: "20px" }}
+            ></i>
           </div>
           <div className="recipes-div">
             <h3>Recipes</h3>
