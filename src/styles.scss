@@ -207,13 +207,114 @@ body {
     }
   }
 }
+//changes to styling made by SORAIA
+// .recipes-div {
+//   margin-top: 15%;
+//   height: 80%;
+
+//   h3 {
+//     color: #07fe20;
+//     text-align: left;
+//   }
+// }
 
 .recipes-div {
   margin-top: 15%;
   height: 80%;
+  text-align: left;
+  margin-left: 2%;
+  color: #07fe20;
 
-  h3 {
-    color: #07fe20;
-    text-align: left;
-  }
+    span {
+      font-size: 1.5rem;
+
+        a {
+         color: white; 
+        }
+    }
 }
+
+//create-recipe form
+.title {
+  text-align: left;
+  color: white;
+  margin: 20px;
+}
+
+.add-form {
+  h2 {
+    color: #07fe20;
+
+    i {
+      margin: 5px;
+    }
+  }
+  
+  // border: 2px solid red;
+  color: white;
+  margin: 20px;
+  text-align: left;
+
+    form {
+      width: 60%;
+
+      span {
+        display: flex;
+  
+          p {
+            width: 100px;
+          }
+  
+          input {
+            margin: 15px;
+            width: 200px;
+
+          }
+
+          .type, .name, .theme {
+            width: 400px;
+          }
+       }
+    }
+
+    h2 {
+      color: #07fe20;
+
+        i {
+          margin: 5px;
+        }
+    }
+
+    textarea {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .ingredients {
+      height: 400px;
+    }
+
+    .directions {
+      height: 300px;
+    }
+
+    .notes {
+      height: 200px;
+    }
+
+    .bottom-text {
+      color: #07fe20;
+    }
+
+    button {
+      width: 500px;
+      height: 40px;
+      margin: 20px;
+      margin-left: 150px;
+      background-color: #07fe20;
+      font-size: 2rem;
+    }
+}
+
+
+
