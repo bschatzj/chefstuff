@@ -6,14 +6,20 @@ import "./styles.scss";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
 import ChefDashboard from "./components/ChefDashboard";
+import EditProfilePicture from "./components/EditProfilePicture";
+import EditAbout from "./components/EditAbout";
+import EditInfo from "./components/EditInfo";
 import PrivateRoute from "./components/PrivateRoute";
 function App() {
   return (
     <div className="App">
       <Route exact path="/" component={CreateAccount} />
       <Route exact path="/login" component={Login} />
-//       <Home />
+      {/*   <Home /> */}
       <Route path="/chefdashboard" component={ChefDashboard} />
+      <Route path="/edit-profile-picture" component={EditProfilePicture} />
+      <Route path="/edit-about" component={EditAbout} />
+      <Route path="/edit-info" component={EditInfo} />
     </div>
   );
 }
