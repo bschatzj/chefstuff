@@ -14,13 +14,13 @@ const EditAbout = () => {
           style={{
             backgroundColor: "transparent",
             border: "2px solid #07fe20",
-            fontSize: "18px",
+            fontSize: "20px",
             color: "#f3ffef",
             width: "80%"
           }}
           type="text"
           name="about"
-          placeholder="Share a little bit about you here! Why you love to cook and why you want to share some of your awesome recipes!"
+          placeholder="Share a little bit about yourself here! Why you love to cook and why you want to share some of your awesome recipes!"
           className="about-input"
         />
 
