@@ -273,22 +273,26 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1 {
+    color: #07fe20;
+
+    border-bottom: 3px solid #2f2d2d;
+  }
   .about-form {
     width: 50%;
-    height: 45%;
-    background-color: #2f2d2d;
-
+    height: 40%;
+    // background-color: #2f2d2d;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .about-label {
-      color: #07fe20;
-      font-size: 24px;
-    }
+    // .about-label {
+    //   color: #07fe20;
+    //   font-size: 24px;
+    // }
     .about-button {
       color: #07fe20;
-      border: 3px solid #1f1e1e;
+      border: 3px solid #2f2d2d;
       background-color: transparent;
       font-size: 22px;
       margin-top: 2%;
@@ -298,3 +302,4 @@ body {
     }
   }
 }
+/*Profile Picture*/
