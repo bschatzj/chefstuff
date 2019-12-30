@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Image from "../ChefRamsay.jpg";
-import ChefRecipes from './ChefRecipes.js';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ChefRecipes from "./ChefRecipes.js";
 const ChefDashboard = props => {
   return (
     <div className="dashboard-body">
@@ -73,11 +72,11 @@ const ChefDashboard = props => {
             <span>
               Recipes
               <Link to="/add-recipe">
-              <i class="far fa-edit"></i>
+                <i class="far fa-edit"></i>
               </Link>
             </span>
-            </div>
-            <div>
+          </div>
+          <div>
             <ChefRecipes />
           </div>
         </div>
