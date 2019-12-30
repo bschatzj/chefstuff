@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+
 const CreateAccount = props => {
   return (
     <div className="outter-register">
