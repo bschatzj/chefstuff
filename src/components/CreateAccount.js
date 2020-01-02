@@ -5,14 +5,14 @@ import { postChefInfo } from "../utils/actions";
 
 const CreateAccount = props => {
   const [form, setForm] = useState({
-    name: "",
+    full_name: "",
     location: "",
     phone: "",
     email: "",
     username: "",
     password: ""
   });
-  // console.log(form);
+  console.log("this is the form", form);
   const handleSubmit = e => {
     e.preventDefault();
     props.postChefInfo(form);
@@ -21,7 +21,7 @@ const CreateAccount = props => {
   const handleChanges = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  console.log(props);
+  console.log("this is state", props);
   return (
     <div className="outter-register">
       <div className="register-page">
@@ -35,7 +35,7 @@ const CreateAccount = props => {
           </div>
           <input
             type="text"
-            name="name"
+            name="full_name"
             placeholder="Full Name"
             value={form.name}
             onChange={handleChanges}

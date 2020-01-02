@@ -11,7 +11,7 @@ const ChefDashboard = props => {
             <Link to="/edit-profile-picture">
               <img className="chef-img" src={Image} alt="Chef" />
               <i
-                class="far fa-edit"
+                className="far fa-edit"
                 style={{
                   color: "white",
                   marginTop: "55%",
@@ -70,9 +70,18 @@ const ChefDashboard = props => {
           <div className="recipes-div">
             {/* <h3>Recipes</h3> */}
             <span>
-              Recipes
+              Recipes{" "}
               <Link to="/add-recipe">
-                <i class="far fa-edit"></i>
+                <i
+                  class="fas fa-plus"
+                  style={{
+                    border: "2px solid  #07fe20",
+                    borderRadius: "20px",
+                    padding: "3px",
+                    fontSize: "20px",
+                    color: "white"
+                  }}
+                ></i>
               </Link>
             </span>
           </div>

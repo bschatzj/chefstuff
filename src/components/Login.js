@@ -19,10 +19,10 @@ const Login = props => {
     console.log(credentials.password);
     console.log(credentials);
     axiosWithAuth()
-      .post("/login", credentials)
+      .post("/login/login", credentials)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
-        props.history.push("/portfolio");
+        localStorage.setItem("token", res.data.token);
+        props.history.push("/chefdashboard");
       })
       .catch(err => console.log(err));
   };
@@ -58,10 +58,7 @@ const Login = props => {
             onChange={handleChange}
           />
           <div>
-            {/* this link is temporary */}
-            <Link to="/chefdashboard">
-              <button>Log in</button>
-            </Link>
+            <button type="submit">Log in</button>
           </div>
           <div className="color-link">
             <Link

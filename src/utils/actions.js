@@ -9,8 +9,8 @@ export const postChefInfo = info => dispatch => {
   axiosWithAuth()
     .post("/login/register", info)
     .then(res => {
-      console.log(res);
       dispatch({ type: POST_REGISTER_SUCCESS, payload: info });
+      console.log(`this is the response ${res.data.token}`);
     })
     .catch(err => {
       dispatch({ type: POST_REGISTER_FAILURE, payload: err.response });

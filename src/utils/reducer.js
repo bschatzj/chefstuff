@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   chefInfo: {
-    name: "",
+    full_name: "",
     location: "",
     phone: "",
     email: "",
