@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Login = props => {
@@ -22,6 +22,8 @@ const Login = props => {
       .post("/login/login", credentials)
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        console.log(res.data);
+        // localStorage.setItem("userId", res.data.user_id);
         props.history.push("/chefdashboard");
       })
       .catch(err => console.log(err));

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { postChefInfo } from "../utils/actions";
 
@@ -17,11 +17,12 @@ const CreateAccount = props => {
     e.preventDefault();
     props.postChefInfo(form);
     props.history.push("/login");
+    console.log("this is state", props);
   };
   const handleChanges = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  console.log("this is state", props);
+
   return (
     <div className="outter-register">
       <div className="register-page">

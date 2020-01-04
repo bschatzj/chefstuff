@@ -1,7 +1,13 @@
 import {
   POST_REGISTER_START,
   POST_REGISTER_SUCCESS,
-  POST_REGISTER_FAILURE
+  POST_REGISTER_FAILURE,
+  UPDATE_USER_START,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAILURE,
+  ADD_RECIPE_START,
+  ADD_RECIPE_SUCCESS,
+  ADD_RECIPE_FAILURE
 } from "../utils/actions";
 
 const initialState = {
@@ -14,6 +20,7 @@ const initialState = {
     password: ""
   },
   isFetching: false,
+  isUpdating: false,
   error: "",
   recipes: []
 };
