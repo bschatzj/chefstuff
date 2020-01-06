@@ -9,16 +9,13 @@ const Nav = () => {
       </h1>
      <div>
         <div>
+          <Link to="/">Profile</Link>
+        </div>
+        <div>
           <Link to="/">Recipes</Link>
         </div>
         <div>
-          <Link to="/chefdashboard">Meet the Chefs</Link>
-        </div>
-        <div>
-          <Link to="/">Videos</Link>
-        </div>
-        <div>
-          <Link to="/">FAQ</Link>
+          <Link to="/">Create Recipe</Link>
         </div>
      </div>
       <div className="sign-in-nav-button">

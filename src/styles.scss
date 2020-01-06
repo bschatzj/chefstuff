@@ -472,13 +472,43 @@ nav {
   a {
     color: white;
     text-decoration: none;
+    border-bottom: 1px solid #1F1E1E;
+    padding: 5px;
+    &:hover {
+      border-bottom: 1px solid #07fe20;
+    }
   }
   .sign-in-nav-button {
     padding: 2px 25px;
     background-color: #07fe20;
-    border-radius: 10px;
+    border-radius: 8px;
+    font-weight: 800;
     a {
       color: black;
+      border-bottom: 1px solid #07fe20;
+      &:hover {
+        color: white;
+      }
     }
+    
+  }
+}
+
+.chef-recipe-div {
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  h2 {
+    color: #07fe20;
+  }
+  p {
+    color: white;
+  }
+  .edit-recipe-button {
+    padding: 5px 10px;
+    margin-right: 20px;
+  }
+  .delete-recipe-button {
+    padding: 5px 10px;
   }
 }
