@@ -12,9 +12,12 @@ import EditAbout from "./components/EditAbout";
 import EditInfo from "./components/EditInfo";
 
 import PrivateRoute from "./components/PrivateRoute";
+import Nav from "./components/Nav";
+
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Route exact path="/" component={CreateAccount} />
       <Route exact path="/login" component={Login} />
       <Route path="/add-recipe" component={CreateRecipe} />
