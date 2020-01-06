@@ -69,6 +69,27 @@ export const reducer = (state = initialState, action) => {
         error: action.payload,
         isFetching: false
       };
+    //PUT - update a single user by id
+    case UPDATE_USER_START:
+      return {
+        ...state,
+        isUpdating: true,
+        error: ""
+      };
+    case UPDATE_USER_SUCCESS:
+      console.log("Update Payload", action.payload);
+      return {
+        ...state,
+        isUpdating: false,
+        error: "",
+        chefInfo: action.payload
+      };
+    case UPDATE_USER_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isUpdating: false
+      };
 
     default:
       return state;

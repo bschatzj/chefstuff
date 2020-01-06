@@ -20,6 +20,26 @@ export const postChefInfo = info => dispatch => {
     });
 };
 
+//(get) Fetch Chef
+export const FETCH_CHEF_START = "FETCH_CHEF_START";
+export const FETCH_CHEF_SUCCESS = "FETCH_CHEF_SUCCESS";
+export const FETCH_CHEF_FAILURE = "FETCH_CHEF_FAILURE";
+
+export const getChef = id => dispatch => {
+  dispatch({ type: FETCH_CHEF_START });
+  // console.log(newRecipe );
+  axiosWithAuth()
+    .get(`/user/user/${id}`)
+    .then(res => {
+      dispatch({ type: FETCH_CHEF_SUCCESS, payload: res.data[0] });
+
+      console.log(`this is the response ${res}`);
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_CHEF_FAILURE, payload: err.response });
+    });
+};
+
 // (put) Update User
 export const UPDATE_USER_START = "UPDATE_USER_START";
 export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS";
@@ -57,24 +77,5 @@ export const addRecipe = newRecipe => dispatch => {
     })
     .catch(err => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err.response });
-    });
-};
-//(get) Fetch Chef
-export const FETCH_CHEF_START = "FETCH_CHEF_START";
-export const FETCH_CHEF_SUCCESS = "FETCH_CHEF_SUCCESS";
-export const FETCH_CHEF_FAILURE = "FETCH_CHEF_FAILURE";
-
-export const getChef = id => dispatch => {
-  dispatch({ type: FETCH_CHEF_START });
-  // console.log(newRecipe );
-  axiosWithAuth()
-    .get(`/user/user/${id}`)
-    .then(res => {
-      dispatch({ type: FETCH_CHEF_SUCCESS, payload: res.data[0] });
-
-      console.log(`this is the response ${res}`);
-    })
-    .catch(err => {
-      dispatch({ type: FETCH_CHEF_FAILURE, payload: err.response });
     });
 };

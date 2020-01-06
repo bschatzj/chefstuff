@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Image from "../ChefRamsay.jpg";
 import ChefRecipes from "./ChefRecipes.js";
 import { connect } from "react-redux";
 import { getChef } from "../utils/actions";
@@ -16,8 +15,12 @@ const ChefDashboard = props => {
       <div className="inner-body">
         <div className="left-div">
           <div className="img-div">
-            <Link to="/edit-profile-picture">
-              <img className="chef-img" src={Image} alt="Chef" />
+            <Link to="/edit-profile-picture/:id">
+              <img
+                className="chef-img"
+                src={props.chefInfo.user_picture}
+                alt="Chef"
+              />
               <i
                 className="far fa-edit"
                 style={{
@@ -30,7 +33,10 @@ const ChefDashboard = props => {
           </div>
 
           <div className="chef-info">
-            <Link to="/edit-info" style={{ textDecoration: "none" }}>
+            <Link
+              to={`/edit-info/${localStorage.getItem("userId")}`}
+              style={{ textDecoration: "none" }}
+            >
               <h3>
                 Personal Info{" "}
                 <i class="far fa-edit" style={{ color: "white" }}></i>
@@ -60,15 +66,12 @@ const ChefDashboard = props => {
           </div>
 
           <div className="about-div">
-            <Link to="/edit-about" style={{ textDecoration: "none" }}>
+            <Link
+              to={`/edit-about/${localStorage.getItem("userId")}`}
+              style={{ textDecoration: "none" }}
+            >
               <h2>About:</h2>
-              <p>
-                Gordon James Ramsay OBE (born 8 November 1966) is a British
-                chef, restaurateur, writer, television personality and food
-                critic. He was born in Johnstone, Scotland, and raised in
-                Stratford-upon-Avon, England. His restaurants have been awarded
-                16 Michelin stars in total and currently hold a total of seven.
-              </p>
+              <p>{props.chefInfo.Bio}</p>
               <i
                 class="far fa-edit"
                 style={{ color: "white", fontSize: "20px" }}
@@ -92,9 +95,6 @@ const ChefDashboard = props => {
                 ></i>
               </Link>
             </span>
-          </div>
-          <div>
-            <ChefRecipes />
           </div>
         </div>
       </div>
