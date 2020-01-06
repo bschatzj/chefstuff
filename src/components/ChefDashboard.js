@@ -6,11 +6,10 @@ import { connect } from "react-redux";
 import { getChef } from "../utils/actions";
 const ChefDashboard = props => {
   const userId = localStorage.getItem("userId");
-  const chefId = props.match.params.id;
 
   useEffect(() => {
     props.getChef(userId);
-  }, [chefId]);
+  }, []);
   console.log(props);
   return (
     <div className="dashboard-body">
@@ -42,22 +41,22 @@ const ChefDashboard = props => {
               <i class="far fa-user"></i> {props.chefInfo.full_name}
             </span>
             <span>
-              {/* <i class="far fa-envelope"></i> {props.chefInfo.email} */}
+              <i class="far fa-envelope"></i> {props.chefInfo.email}
             </span>
             <span>
-              {/* <i class="fas fa-location-arrow"></i> {props.chefInfo.location} */}
+              <i class="fas fa-location-arrow"></i> {props.chefInfo.Location}
             </span>
             <span>
-              {/* <i class="fas fa-phone-alt"></i> {props.chefInfo.phone} */}
+              <i class="fas fa-phone-alt"></i> {props.chefInfo.phone}
             </span>
           </div>
         </div>
 
         <div className="right-div">
           <div className="name-div">
-            {/* <h1>{props.chefInfo.full_name}</h1> */}
+            <h1>{props.chefInfo.full_name}</h1>
 
-            {/* <h2>{props.chefInfo.location}</h2> */}
+            <h2>{props.chefInfo.Location}</h2>
           </div>
 
           <div className="about-div">
@@ -104,7 +103,8 @@ const ChefDashboard = props => {
 };
 const mapStateToProps = state => {
   return {
-    chefInfo: state.chefInfo
+    chefInfo: state.chefInfo,
+    isFetching: state.isFetching
   };
 };
 

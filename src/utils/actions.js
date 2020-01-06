@@ -70,9 +70,9 @@ export const getChef = id => dispatch => {
   axiosWithAuth()
     .get(`/user/user/${id}`)
     .then(res => {
-      dispatch({ type: FETCH_CHEF_SUCCESS, payload: res.data });
+      dispatch({ type: FETCH_CHEF_SUCCESS, payload: res.data[0] });
 
-      console.log(`this is the response ${res.data}`);
+      console.log(`this is the response ${res}`);
     })
     .catch(err => {
       dispatch({ type: FETCH_CHEF_FAILURE, payload: err.response });
