@@ -19,7 +19,7 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route path="/add-recipe" component={CreateRecipe} />
       {/*   <Home /> */}
-      <PrivateRoute path="/chefdashboard" component={ChefDashboard} />
+      <PrivateRoute path="/chefdashboard/:id" component={ChefDashboard} />
       <Route path="/edit-profile-picture/" component={EditProfilePicture} />
       <Route path="/edit-about/" component={EditAbout} />
       <Route path="/edit-info/" component={EditInfo} />

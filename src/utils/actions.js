@@ -59,3 +59,22 @@ export const addRecipe = newRecipe => dispatch => {
       dispatch({ type: ADD_RECIPE_FAILURE, payload: err.response });
     });
 };
+//(get) Fetch Chef
+export const FETCH_CHEF_START = "FETCH_CHEF_START";
+export const FETCH_CHEF_SUCCESS = "FETCH_CHEF_SUCCESS";
+export const FETCH_CHEF_FAILURE = "FETCH_CHEF_FAILURE";
+
+export const getChef = id => dispatch => {
+  dispatch({ type: FETCH_CHEF_START });
+  // console.log(newRecipe );
+  axiosWithAuth()
+    .get(`/user/user/${id}`)
+    .then(res => {
+      dispatch({ type: FETCH_CHEF_SUCCESS, payload: res.data });
+
+      console.log(`this is the response ${res.data}`);
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_CHEF_FAILURE, payload: err.response });
+    });
+};
