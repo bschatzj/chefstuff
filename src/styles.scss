@@ -226,13 +226,13 @@ body {
   margin-left: 2%;
   color: #07fe20;
 
-    span {
-      font-size: 1.5rem;
+  span {
+    font-size: 1.5rem;
 
-        a {
-         color: white; 
-        }
+    a {
+      color: white;
     }
+  }
 }
 
 //create-recipe form
@@ -243,6 +243,8 @@ body {
 }
 
 .add-form {
+  // border: 2px solid red;
+  // width: 60%;
   h2 {
     color: #07fe20;
 
@@ -250,71 +252,73 @@ body {
       margin: 5px;
     }
   }
-  
+
   // border: 2px solid red;
   color: white;
   margin: 20px;
   text-align: left;
 
-    form {
-      width: 60%;
+  form {
+    width: 60%;
 
-      span {
-        display: flex;
-  
-          p {
-            width: 100px;
-          }
-  
-          input {
-            margin: 15px;
-            width: 200px;
+    span {
+      display: flex;
 
-          }
+      p {
+        width: 100px;
+      }
 
-          .type, .name, .theme {
-            width: 400px;
-          }
-       }
+      input {
+        margin: 15px;
+        width: 200px;
+      }
+
+      .type,
+      .name,
+      .theme {
+        width: 400px;
+      }
     }
+  }
 
-    h2 {
-      color: #07fe20;
+  h2 {
+    color: #07fe20;
 
-        i {
-          margin: 5px;
-        }
+    i {
+      margin: 5px;
     }
+  }
 
-    textarea {
-      margin-left: 0;
-      width: 100%;
-    }
+  textarea {
+    margin-left: 0;
+    width: 100%;
+  }
 
-    .ingredients {
-      height: 400px;
-    }
+  .ingredients {
+    height: 400px;
+  }
 
-    .directions {
-      height: 300px;
-    }
+  .directions {
+    height: 300px;
+  }
 
-    .notes {
-      height: 200px;
-    }
+  .notes {
+    height: 200px;
+  }
 
-    .bottom-text {
-      color: #07fe20;
-    }
+  .bottom-text {
+    color: #07fe20;
+  }
 
-    button {
-      width: 500px;
-      height: 40px;
-      margin: 20px;
-      margin-left: 150px;
-      background-color: #07fe20;
-      font-size: 2rem;
-    }
+  button {
+    width: 500px;
+    height: 40px;
+    margin: 20px;
+    margin-left: 150px;
+    background-color: #07fe20;
+    font-size: 2rem;
+    border: none;
+  }
 }
 
 /*Edit Info*/

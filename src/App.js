@@ -19,10 +19,10 @@ function App() {
       <Route exact path="/login" component={Login} />
       <Route path="/add-recipe" component={CreateRecipe} />
       {/*   <Home /> */}
-      <Route path="/chefdashboard" component={ChefDashboard} />
-      <Route path="/edit-profile-picture" component={EditProfilePicture} />
-      <Route path="/edit-about" component={EditAbout} />
-      <Route path="/edit-info" component={EditInfo} />
+      <PrivateRoute path="/chefdashboard" component={ChefDashboard} />
+      <Route path="/edit-profile-picture/" component={EditProfilePicture} />
+      <Route path="/edit-about/" component={EditAbout} />
+      <Route path="/edit-info/" component={EditInfo} />
     </div>
   );
 }

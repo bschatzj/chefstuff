@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Image from "../ChefRamsay.jpg";
-import ChefRecipes from './ChefRecipes.js';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ChefRecipes from "./ChefRecipes.js";
+import { connect } from "react-redux";
 const ChefDashboard = props => {
   return (
     <div className="dashboard-body">
@@ -12,7 +12,7 @@ const ChefDashboard = props => {
             <Link to="/edit-profile-picture">
               <img className="chef-img" src={Image} alt="Chef" />
               <i
-                class="far fa-edit"
+                className="far fa-edit"
                 style={{
                   color: "white",
                   marginTop: "55%",
@@ -31,25 +31,25 @@ const ChefDashboard = props => {
             </Link>
 
             <span>
-              <i class="far fa-user"></i> Gordon Ramsay
+              <i class="far fa-user"></i> {props.chefInfo.full_name}
             </span>
             <span>
-              <i class="far fa-envelope"></i> Gordonram@email.com
+              <i class="far fa-envelope"></i> {props.chefInfo.email}
             </span>
             <span>
-              <i class="fas fa-location-arrow"></i> Johnstone, UK
+              <i class="fas fa-location-arrow"></i> {props.chefInfo.location}
             </span>
             <span>
-              <i class="fas fa-phone-alt"></i> 801-258-1545
+              <i class="fas fa-phone-alt"></i> {props.chefInfo.phone}
             </span>
           </div>
         </div>
 
         <div className="right-div">
           <div className="name-div">
-            <h1>Gordon Ramsay</h1>
+            <h1>{props.chefInfo.full_name}</h1>
 
-            <h2>Johnstone, UK</h2>
+            <h2>{props.chefInfo.location}</h2>
           </div>
 
           <div className="about-div">
@@ -71,13 +71,22 @@ const ChefDashboard = props => {
           <div className="recipes-div">
             {/* <h3>Recipes</h3> */}
             <span>
-              Recipes
+              Recipes{" "}
               <Link to="/add-recipe">
-              <i class="far fa-edit"></i>
+                <i
+                  class="fas fa-plus"
+                  style={{
+                    border: "2px solid  #07fe20",
+                    borderRadius: "20px",
+                    padding: "3px",
+                    fontSize: "20px",
+                    color: "white"
+                  }}
+                ></i>
               </Link>
             </span>
-            </div>
-            <div>
+          </div>
+          <div>
             <ChefRecipes />
           </div>
         </div>
@@ -85,4 +94,10 @@ const ChefDashboard = props => {
     </div>
   );
 };
-export default ChefDashboard;
+const mapStateToProps = state => {
+  return {
+    chefInfo: state.chefInfo
+  };
+};
+
+export default connect(mapStateToProps, {})(ChefDashboard);
