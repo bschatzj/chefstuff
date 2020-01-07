@@ -28,9 +28,8 @@ function App() {
       <Route path="/edit-profile-picture/:id" component={EditProfilePicture} />
       <Route path="/edit-about/:id" component={EditAbout} />
       <Route path="/edit-info/:id" component={EditInfo} />
-      <Route path='/recipe/:id' component={ChefRecipe} />
+      <Route path="/recipe/:id" component={ChefRecipe} />
       <Route path="/guestdashboard" component={GuestDashboard} />
- master
       {/* <Footer /> */}
     </div>
   );

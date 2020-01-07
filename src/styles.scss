@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 * {
   box-sizing: border-box;
   outline: none;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #1f1e1e;
 }
 
@@ -551,32 +551,38 @@ nav {
   }
 }
 
-// Recipe pages 
+// Recipe pages
 
 .chef-recipe-div {
   text-align: left;
   width: 80%;
   margin: 0 auto;
-  h2, h3 {
+  h2,
+  h3 {
     color: #07fe20;
   }
   p {
     color: white;
   }
   .edit-recipe-button {
-    padding: 5px 10px;
-    margin-right: 20px;
-    border-radius: 2px;
+    color: #07fe20;
+    border: 3px solid #2f2d2d;
+    background-color: transparent;
+    font-size: 22px;
+    width: 8%;
+    margin-right: 15px;
   }
   .delete-recipe-button {
-    padding: 5px 10px;
-    border-radius: 2px;
+    color: #07fe20;
+    border: 3px solid #2f2d2d;
+    background-color: transparent;
+    font-size: 22px;
+    width: 8%;
   }
 }
 
 .recipe-image {
-  background-color: white;
-  width: 600px;
+  width: 400px;
   height: 400px;
-  padding: 50px;
+  border: 5px solid #07fe20;
 }
