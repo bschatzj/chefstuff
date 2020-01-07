@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import RecipeCard from './RecipeCard';
+import Footer from './Footer';
 import sourdough from '../img/sourdough.jpg';
 import pancakes from '../img/pancakes.jpg';
 import chocolate from '../img/chocolate.jpg';
@@ -12,7 +13,38 @@ import chicken from '../img/chicken.jpg';
 import fish from '../img/fish.jpg';
 import sushi from '../img/sushi.jpg';
 
+const guestData = [
+  { img: sourdough, title: `Grandma's Sourdough`, info: `Approx 2 hrs` },
+  { img: pancakes, title: `Whole Wheat Pancakes`, info: `30 min` },
+  { img: chocolate, title: `Easy Chocolate Volcano`, info: `30 min` },
+  { img: kale, title: `Kale Salad`, info: `30 min` },
+  { img: corn, title: `Creamy Corn`, info: `30 min` },
+  { img: veggie, title: `Very Veggie Burger`, info: `30 min` },
+  { img: soup, title: `Ellies Magic Soup`, info: `30 min` },
+  { img: steak, title: `Steak & Veggies`, info: `30 min` },
+  { img: chicken, title: `Roast Chicken`, info: `30 min` },
+  { img: fish, title: `Fish Basics`, info: `30 min` },
+  { img: sushi, title: `Sushi Sushi`, info: `30 min` }
+];
+
+guestData.map(item => {
+  const card = item;
+  return card;
+});
+
 const GuestDashboard = () => {
+  const [search, setSearch] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const handleChange = event => {
+    setSearch(event.target.value);
+  };
+  useEffect(() => {
+    const results = guestData.filter(recipe =>
+      recipe.title.toLowerCase().includes(search)
+    );
+    setSearchResults(results);
+    console.log(results);
+  }, [search]);
   return (
     <>
       <div className='dashboard-search'>
@@ -31,6 +63,9 @@ const GuestDashboard = () => {
               border: 0,
               width: '200px'
             }}
+            autoComplete='off'
+            value={search}
+            onChange={handleChange}
             type='text'
             placeholder='Search..'
             name='search'
@@ -39,65 +74,16 @@ const GuestDashboard = () => {
       </div>
 
       <section>
-        <h2>Something For Dinner</h2>
-        <div id='myUL' className='dashboard-container'>
-          <div className='dashboard-card'>
-            <img src={sourdough} />
-            <h3>Grandma's Sourdough</h3>
-            <p>Approx 2 hrs</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={pancakes} />
-            <h3>Whole Wheat Pancakes</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={chocolate} />
-            <h3>Easy Chocolate Volcano</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={kale} />
-            <h3>Kale Salad</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={corn} />
-            <h3>Creamy Corn</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={veggie} />
-            <h3>Very Veggie Burger</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={soup} />
-            <h3>Ellies Magic Soup</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={steak} />
-            <h3>Steak {`&`} Veggies</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={chicken} />
-            <h3>Roast Chicken</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={fish} />
-            <h3>Fish Basics</h3>
-            <p>30 min</p>
-          </div>
-          <div className='dashboard-card'>
-            <img src={sushi} />
-            <h3>Sushi Sushi</h3>
-            <p>30 min</p>
-          </div>
+        <h2 style={{ color: '#fff' }}>Something For Dinner</h2>
+        <div className='dashboard-container'>
+          {searchResults.map(data => {
+            return (
+              <RecipeCard img={data.img} title={data.title} info={data.info} />
+            );
+          })}
         </div>
       </section>
+      <Footer />
     </>
   );
 };
