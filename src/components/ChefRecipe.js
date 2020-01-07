@@ -12,11 +12,18 @@ const ChefRecipe = (props) => {
             console.log(err)
         })
     return (
-        <div className="chef-recipe-div">
+
+        <div className="chef-recipe-div"> 
+            <h2>Recipe Name</h2>
+            <div className="recipe-image"></div>
+            <h3>Prep Time: </h3>
+            <h3>Cook Time: </h3>
+            <h3>Servings: </h3>
             <h2>Ingredients</h2>
             <p>{recipe.ingredients}</p>
             <h2>Instructions</h2>
             <p>{recipe.instructions}</p>
+
             <div className="recipe-buttons-div">
                 <button className="edit-recipe-button">Edit</button>
                 <button className="delete-recipe-button">Delete</button>

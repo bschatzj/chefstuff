@@ -16,6 +16,7 @@ const RecipeImg = props => {
   console.log("this is props", props);
   return (
     <div>
+
         <Card>
           {props.chefInfo &&
             props.recipe &&
@@ -39,6 +40,7 @@ const RecipeImg = props => {
               );
             })}
         </Card>
+
     </div>
   );
 };

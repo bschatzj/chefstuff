@@ -13,7 +13,10 @@ import {
   FETCH_CHEF_FAILURE,
   FETCH_RECIPE_START,
   FETCH_RECIPE_SUCCESS,
-  FETCH_RECIPE_FAILURE
+  FETCH_RECIPE_FAILURE,
+  FETCH_ALL_RECIPE_START,
+  FETCH_ALL_RECIPE_SUCCESS,
+  FETCH_ALL_RECIPE_FAILURE
 } from "../utils/actions";
 const userId = localStorage.getItem("userId");
 const initialState = {
@@ -35,6 +38,17 @@ const initialState = {
       ingredients: "",
       instructions: "",
       user_id: userId
+    }
+  ],
+  allRecipes: [
+    {
+      recipe_name: "",
+      prep_time: "",
+      cook_time: "",
+      servings: "",
+      recipe_photo: "",
+      ingredients: "",
+      instructions: ""
     }
   ],
   isFetching: false,
@@ -136,6 +150,25 @@ export const reducer = (state = initialState, action) => {
         recipe: action.payload
       };
     case FETCH_RECIPE_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false
+      };
+    case FETCH_ALL_RECIPE_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case FETCH_ALL_RECIPE_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        allRecipes: action.payload
+      };
+    case FETCH_ALL_RECIPE_FAILURE:
       return {
         ...state,
         error: action.payload,
