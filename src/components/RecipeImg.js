@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Card, CardImg } from "reactstrap";
 import { connect } from "react-redux";
 import { getRecipe } from "../utils/actions";
+import { Link } from "react-router-dom";
+
+
 const RecipeImg = props => {
   const [recepies, setRecepies] = useState();
   console.log(recepies);
@@ -13,27 +16,31 @@ const RecipeImg = props => {
   console.log("this is props", props);
   return (
     <div>
-      <Card>
-        {props.chefInfo &&
-          props.recipe &&
-          props.recipe.map(value => {
-            console.log(value);
-            return (
-              <CardImg
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  borderRadius: "10px",
-                  marginTop: "20px",
-                  marginRight: "20px"
-                }}
-                src={value.recipe_photo}
-                class="img-thumbnail"
-                alt={value.recipe_name}
-              />
-            );
-          })}
-      </Card>
+
+        <Card>
+          {props.chefInfo &&
+            props.recipe &&
+            props.recipe.map(value => {
+              console.log(value);
+              return (
+                <Link to={`/recipe/${value.id}`}>
+                <CardImg
+                  style={{
+                    width: "150px",
+                    height: "150px",
+                    borderRadius: "10px",
+                    marginTop: "20px",
+                    marginRight: "20px"
+                  }}
+                  src={value.recipe_photo}
+                  class="img-thumbnail"
+                  alt="sushi"
+                />
+                </Link>
+              );
+            })}
+        </Card>
+
     </div>
   );
 };
