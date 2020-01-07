@@ -1,15 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Image from "../img/pancakes.jpg";
-import Chicken from "../img/chicken.jpg";
-import Fish from "../img/fish.jpg";
-import Soup from "../img/soup.jpg";
-import Sourdough from "../img/sourdough.jpg";
-import Sushi from "../img/sushi.jpg";
-import Veggie from "../img/veggie.jpg";
-import Corn from "../img/corn.jpg";
-import Choclate from "../img/chocolate.jpg";
-import Kale from "../img/kale.jpg";
-import Steak from "../img/steak-veggies.JPG";
 import { Card, CardImg } from "reactstrap";
 import { connect } from "react-redux";
 import { getRecipe } from "../utils/actions";
@@ -40,7 +29,7 @@ const RecipeImg = props => {
                 }}
                 src={value.recipe_photo}
                 class="img-thumbnail"
-                alt="sushi"
+                alt={value.recipe_name}
               />
             );
           })}
