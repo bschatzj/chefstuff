@@ -550,11 +550,13 @@ nav {
   }
 }
 
+// Recipe pages 
+
 .chef-recipe-div {
   text-align: left;
   width: 80%;
   margin: 0 auto;
-  h2 {
+  h2, h3 {
     color: #07fe20;
   }
   p {
@@ -563,8 +565,17 @@ nav {
   .edit-recipe-button {
     padding: 5px 10px;
     margin-right: 20px;
+    border-radius: 2px;
   }
   .delete-recipe-button {
     padding: 5px 10px;
+    border-radius: 2px;
   }
+}
+
+.recipe-image {
+  background-color: white;
+  width: 600px;
+  height: 400px;
+  padding: 50px;
 }
