@@ -1,18 +1,18 @@
-import React from 'react';
-import './App.css';
-import { Route } from 'react-router-dom';
-import './styles.scss';
+import React from "react";
+import "./App.css";
+import { Route } from "react-router-dom";
+import "./styles.scss";
 // import Home from "./components/Home";
-import Login from './components/Login';
-import CreateAccount from './components/CreateAccount';
-import ChefDashboard from './components/ChefDashboard';
-import CreateRecipe from './components/CreateRecipe';
-import EditProfilePicture from './components/EditProfilePicture';
-import EditAbout from './components/EditAbout';
-import EditInfo from './components/EditInfo';
-import Footer from './components/Footer';
-import GuestDashboard from './components/GuestDashboard';
-
+import Login from "./components/Login";
+import CreateAccount from "./components/CreateAccount";
+import ChefDashboard from "./components/ChefDashboard";
+import CreateRecipe from "./components/CreateRecipe";
+import EditProfilePicture from "./components/EditProfilePicture";
+import EditAbout from "./components/EditAbout";
+import EditInfo from "./components/EditInfo";
+import Footer from "./components/Footer";
+import GuestDashboard from "./components/GuestDashboard";
+import ChefRecipe from "./components/ChefRecipe";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Nav from "./components/Nav";
@@ -29,7 +29,8 @@ function App() {
       <Route path="/edit-profile-picture/:id" component={EditProfilePicture} />
       <Route path="/edit-about/:id" component={EditAbout} />
       <Route path="/edit-info/:id" component={EditInfo} />
-
+      <Route path="/chef-recipe" component={ChefRecipe} />
+      {/* <Footer /> */}
     </div>
   );
 }
