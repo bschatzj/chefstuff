@@ -89,7 +89,7 @@ body {
     background-color: black;
     border: none;
     font-size: 20px;
-    width: 103.5%;
+    width: 100%;
     padding: 5px;
     border-radius: 5px;
     margin-top: 30px;
@@ -292,15 +292,15 @@ body {
 
   textarea {
     margin-left: 0;
-    width: 100%;
+    // width: 100%;
   }
 
   .ingredients {
-    height: 400px;
+    // height: 400px;
   }
 
   .directions {
-    height: 300px;
+    // height: 300px;
   }
 
   .notes {
@@ -312,13 +312,14 @@ body {
   }
 
   button {
-    width: 500px;
+    width: 200px;
     height: 40px;
-    margin: 20px;
-    margin-left: 150px;
-    background-color: #07fe20;
-    font-size: 2rem;
-    border: none;
+    margin-top: 20px;
+    color: white;
+    background-color: transparent;
+    font-size: 1.5rem;
+    // font-weight: bold;
+    border: 2px solid #07fe20;
   }
 }
 
