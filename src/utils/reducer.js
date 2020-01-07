@@ -7,7 +7,10 @@ import {
   UPDATE_USER_FAILURE,
   ADD_RECIPE_START,
   ADD_RECIPE_SUCCESS,
-  ADD_RECIPE_FAILURE
+  ADD_RECIPE_FAILURE,
+  FETCH_CHEF_START,
+  FETCH_CHEF_SUCCESS,
+  FETCH_CHEF_FAILURE
 } from "../utils/actions";
 
 const initialState = {
@@ -22,7 +25,8 @@ const initialState = {
   isFetching: false,
   isUpdating: false,
   error: "",
-  recipes: []
+  recipes: [],
+  chefs: []
 };
 
 export const reducer = (state = initialState, action) => {
@@ -45,6 +49,46 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         error: action.payload
+      };
+    case FETCH_CHEF_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case FETCH_CHEF_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        chefInfo: action.payload
+      };
+    case FETCH_CHEF_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false
+      };
+    //PUT - update a single user by id
+    case UPDATE_USER_START:
+      return {
+        ...state,
+        isUpdating: true,
+        error: ""
+      };
+    case UPDATE_USER_SUCCESS:
+      console.log("Update Payload", action.payload);
+      return {
+        ...state,
+        isUpdating: false,
+        error: "",
+        chefInfo: action.payload
+      };
+    case UPDATE_USER_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isUpdating: false
       };
 
     default:
