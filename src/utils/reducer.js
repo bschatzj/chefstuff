@@ -10,9 +10,12 @@ import {
   ADD_RECIPE_FAILURE,
   FETCH_CHEF_START,
   FETCH_CHEF_SUCCESS,
-  FETCH_CHEF_FAILURE
+  FETCH_CHEF_FAILURE,
+  FETCH_RECIPE_START,
+  FETCH_RECIPE_SUCCESS,
+  FETCH_RECIPE_FAILURE
 } from "../utils/actions";
-
+const userId = localStorage.getItem("userId");
 const initialState = {
   chefInfo: {
     full_name: "",
@@ -22,10 +25,22 @@ const initialState = {
     username: "",
     password: ""
   },
+  recipe: [
+    {
+      recipe_name: "",
+      prep_time: "",
+      cook_time: "",
+      servings: "",
+      recipe_photo: "",
+      ingredients: "",
+      instructions: "",
+      user_id: userId
+    }
+  ],
   isFetching: false,
   isUpdating: false,
   error: "",
-  recipes: [],
+
   chefs: []
 };
 
@@ -89,6 +104,42 @@ export const reducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
         isUpdating: false
+      };
+    case ADD_RECIPE_START:
+      return {
+        ...state,
+        isFetching: true
+      };
+    case ADD_RECIPE_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        error: ""
+      };
+    case ADD_RECIPE_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload
+      };
+    case FETCH_RECIPE_START:
+      return {
+        ...state,
+        isFetching: true,
+        error: ""
+      };
+    case FETCH_RECIPE_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        recipe: action.payload
+      };
+    case FETCH_RECIPE_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false
       };
 
     default:
