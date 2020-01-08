@@ -7,7 +7,7 @@ import instagram from '../instagram.svg';
 const Footer = () => {
   return (
     <>
-      <footer>
+      <footer className='footer-container'>
         <h2>
           <span className='logo'>Chef</span>
           <span style={{ color: '#fff' }}>Port</span>

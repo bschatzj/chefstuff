@@ -14,14 +14,14 @@ import GuestDashboard from "./components/GuestDashboard";
 import ChefRecipe from "./components/ChefRecipe";
 import GuestRecipe from "./components/GuestRecipe";
 
-import PrivateRoute from "./components/PrivateRoute";
-import Nav from "./components/Nav";
+
+import PrivateRoute from './components/PrivateRoute';
+import Nav from './components/Nav';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Nav />
-
       <Route exact path="/" component={CreateAccount} />
       <Route exact path="/login" component={Login} />
       <Route path="/add-recipe" component={CreateRecipe} />
@@ -32,7 +32,7 @@ function App() {
       <Route path="/recipe/:id" component={ChefRecipe} />
       <Route path="/guestrecipe/:id" component={GuestRecipe} />
       <Route path="/guestdashboard" component={GuestDashboard} />
-      {/* <Footer /> */}
+       <Footer />
     </div>
   );
 }

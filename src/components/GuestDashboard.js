@@ -29,20 +29,15 @@ const guestData = [
   { img: sushi, title: `Sushi Sushi`, info: `30 min` }
 ];
 
-guestData.map(item => {
-  const card = item;
-  return card;
-});
-
 const GuestDashboard = () => {
   const [food, setFood] = useState([
     {
-      recipe_name: "",
-      prep_time: "",
-      recipe_photo: ""
+      recipe_name: '',
+      prep_time: '',
+      recipe_photo: ''
     }
   ]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const handleChange = event => {
     setSearch(event.target.value);
   };
@@ -56,7 +51,7 @@ const GuestDashboard = () => {
 
   useEffect(() => {
     axiosWithAuth()
-      .get("/recipes")
+      .get('/recipes')
       .then(res => {
         setFood(res.data);
       })
@@ -65,10 +60,10 @@ const GuestDashboard = () => {
 
   return (
     <>
-      <div className="dashboard-search">
+      <div className='dashboard-search'>
         <h1
           style={{
-            color: "#07fe20"
+            color: '#07fe20'
           }}
         >
           Featured
@@ -76,24 +71,24 @@ const GuestDashboard = () => {
         <form>
           <input
             style={{
-              padding: "5px",
-              borderRadius: "5px",
+              padding: '5px',
+              borderRadius: '5px',
               border: 0,
-              width: "200px"
+              width: '200px'
             }}
-            autoComplete="off"
+            autoComplete='off'
             value={search}
             onChange={handleChange}
-            type="text"
-            placeholder="Search.."
-            name="search"
+            type='text'
+            placeholder='Search..'
+            name='search'
           />
         </form>
       </div>
 
       <section>
-        <h2 style={{ color: "#fff" }}>Something For Dinner</h2>
-        <div className="dashboard-container">
+        <h2 style={{ color: '#fff' }}>Something For Dinner</h2>
+        <div className='dashboard-container'>
           {food.map(data => {
             return (
               <Link to={`/guestrecipe/${data.id}`}>
