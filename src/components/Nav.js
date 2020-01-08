@@ -26,7 +26,6 @@ const Nav = () => {
         </h1>
         <div>
           <div>
-
             <Link to={`/chefdashboard/${localStorage.getItem("userId")}`}>
               Profile
             </Link>
@@ -50,7 +49,6 @@ const Nav = () => {
         </div>
       </nav>
 
-
       <nav className={!loggedIn ? "logged" : "out"}>
         <h1>
           <Link to="/">
@@ -58,10 +56,9 @@ const Nav = () => {
           </Link>
         </h1>
         <div>
-
-          <Link to="/guestdashboard">Recipes</Link>
-
-        </div>
+          <div>
+            <Link to="/guestdashboard">Recipes</Link>
+          </div>
           <div className="sign-in-nav-button">
             <Link to="/login">Sign In</Link>
           </div>
