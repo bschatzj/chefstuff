@@ -21,17 +21,19 @@ const Nav = () => {
         </h1 >
         <div>
           <div>
-            <Link to="/">Profile</Link>
+            <div>
+              <Link to="/">Profile</Link>
+            </div>
+            <div>
+              <Link to="/">Recipes</Link>
+            </div>
+            <div>
+              <Link to="/">Create Recipe</Link>
+            </div>
           </div>
-          <div>
-            <Link to="/">Recipes</Link>
+          <div className="sign-in-nav-button">
+            <Link to="/login" onClick={() => { signOut() }}>Sign Out</Link>
           </div>
-          <div>
-            <Link to="/">Create Recipe</Link>
-          </div>
-        </div>
-        <div className="sign-in-nav-button">
-          <Link to="/login" onClick={() => { signOut() }}>Sign Out</Link>
         </div>
       </nav >
 
@@ -40,13 +42,15 @@ const Nav = () => {
           <Link to="/"><span>Chef</span>Port<span>.</span></Link>
         </h1>
         <div>
+        <div>
           <Link to="/">Recipes</Link>
         </div>
-        <div className="sign-in-nav-button">
-          <Link to="/login">Sign In</Link>
-        </div>
-        <div className="sign-in-nav-button">
-          <Link to="/">Sign Up</Link>
+          <div className="sign-in-nav-button">
+            <Link to="/login">Sign In</Link>
+          </div>
+          <div className="sign-in-nav-button">
+            <Link to="/">Sign Up</Link>
+          </div>
         </div>
       </nav>
 
