@@ -53,22 +53,6 @@ const Nav = () => {
     </div>
   );
 }
-// if (!loggedIn) return (
-// <nav>
-//   <h1>
-//     <Link to="/"><span>Chef</span>Port<span>.</span></Link>
-//   </h1>
-//   <div>
-//     <Link to="/">Recipes</Link>
-//   </div>
-//   <div className="sign-in-nav-button">
-//     <Link to="/login">Sign In</Link>
-//   </div>
-//   <div className="sign-in-nav-button">
-//     <Link to="/">Sign Up</Link>
-//   </div>
-// </nav>
-// );
-// }
 
 export default Nav;
+
