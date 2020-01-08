@@ -13,6 +13,7 @@ import chicken from "../img/chicken.jpg";
 import fish from "../img/fish.jpg";
 import sushi from "../img/sushi.jpg";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 
 const guestData = [
   { img: sourdough, title: `Grandma's Sourdough`, info: `Approx 2 hrs` },
@@ -95,11 +96,13 @@ const GuestDashboard = () => {
         <div className="dashboard-container">
           {food.map(data => {
             return (
-              <RecipeCard
-                img={data.recipe_photo}
-                title={data.recipe_name}
-                info={data.prep_time}
-              />
+              <Link to={`/guestrecipe/${data.id}`}>
+                <RecipeCard
+                  img={data.recipe_photo}
+                  title={data.recipe_name}
+                  info={data.prep_time}
+                />
+              </Link>
             );
           })}
         </div>
