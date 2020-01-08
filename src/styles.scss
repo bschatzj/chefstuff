@@ -510,10 +510,13 @@ body {
 
 /* Nav */
 
+$break-mobile: 500px;
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+ 
   div {
     display: flex;
     justify-content: space-around;
@@ -585,4 +588,15 @@ nav {
   width: 400px;
   height: 400px;
   border: 5px solid #07fe20;
+}
+
+@media (max-width: 800px) {
+  nav {
+    font-size: 20px;
+    flex-direction: column;
+  }
+ .sign-in-nav-button {
+   margin: 10px 0;
+   padding: 2px 10px;
+ }
 }
