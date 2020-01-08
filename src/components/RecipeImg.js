@@ -23,13 +23,7 @@ const RecipeImg = props => {
             return (
               <Link to={`/recipe/${value.id}`}>
                 <CardImg
-                  style={{
-                    width: "230px",
-                    height: "230px",
-                    borderRadius: "10px",
-                    marginTop: "20px",
-                    marginRight: "70px"
-                  }}
+                  className="recipecard"
                   src={value.recipe_photo}
                   class="img-thumbnail"
                   alt="sushi"

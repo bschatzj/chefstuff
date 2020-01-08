@@ -21,14 +21,8 @@ const ChefDashboard = props => {
                 src={props.chefInfo.user_picture}
                 alt="Chef"
               />
-              <i
-                className="far fa-edit"
-                style={{
-                  color: "white",
-                  marginTop: "55%",
-                  fontSize: "20px"
-                }}
-              ></i>
+              <br />
+              <i id="iconImg" className="far fa-edit"></i>
             </Link>
           </div>
 
@@ -38,8 +32,7 @@ const ChefDashboard = props => {
               style={{ textDecoration: "none" }}
             >
               <h3>
-                Personal Info{" "}
-                <i class="far fa-edit" style={{ color: "white" }}></i>
+                Personal Info <i id="iconInfo" class="far fa-edit"></i>
               </h3>
             </Link>
 
@@ -72,10 +65,7 @@ const ChefDashboard = props => {
             >
               <h2>About:</h2>
               <p>{props.chefInfo.Bio}</p>
-              <i
-                class="far fa-edit"
-                style={{ color: "white", fontSize: "20px" }}
-              ></i>
+              <i id="iconAbout" class="far fa-edit"></i>
             </Link>
           </div>
           <div className="recipes-div">
@@ -95,7 +85,7 @@ const ChefDashboard = props => {
                 ></i>
               </Link>
             </span>
-              <RecipeImg />
+            <RecipeImg />
           </div>
         </div>
       </div>
