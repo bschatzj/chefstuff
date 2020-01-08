@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '../App.css';
+import { Link } from "react-router-dom";
 
 const ChefRecipe = (props) => {
     let recipeid = (props.match.params.id)
@@ -72,7 +73,7 @@ const ChefRecipe = (props) => {
 
             <div className={deleting ? "modal" : "closed"}>
                 <h1>Confirm Delete?</h1>
-                <button onClick={() => { remover() }}>Confirm</button>
+                <Link to={`/chefdashboard/${localStorage.getItem("userId")}`}><button onClick={() => { remover() }}>Confirm</button> </Link>
                 <button onClick={() => { setDeleting(false) }}>Cancel</button>
             </div>
 
