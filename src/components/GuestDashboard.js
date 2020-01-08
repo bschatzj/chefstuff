@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard';
-import Footer from './Footer';
-import sourdough from '../img/sourdough.jpg';
-import pancakes from '../img/pancakes.jpg';
-import chocolate from '../img/chocolate.jpg';
-import kale from '../img/kale.jpg';
-import corn from '../img/corn.jpg';
-import veggie from '../img/veggie.jpg';
-import soup from '../img/soup.jpg';
-import steak from '../img/steak-veggies.JPG';
-import chicken from '../img/chicken.jpg';
-import fish from '../img/fish.jpg';
-import sushi from '../img/sushi.jpg';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import React, { useState, useEffect } from "react";
+import RecipeCard from "./RecipeCard";
+import Footer from "./Footer";
+import sourdough from "../img/sourdough.jpg";
+import pancakes from "../img/pancakes.jpg";
+import chocolate from "../img/chocolate.jpg";
+import kale from "../img/kale.jpg";
+import corn from "../img/corn.jpg";
+import veggie from "../img/veggie.jpg";
+import soup from "../img/soup.jpg";
+import steak from "../img/steak-veggies.JPG";
+import chicken from "../img/chicken.jpg";
+import fish from "../img/fish.jpg";
+import sushi from "../img/sushi.jpg";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 
 const guestData = [
   { img: sourdough, title: `Grandma's Sourdough`, info: `Approx 2 hrs` },
@@ -90,11 +91,13 @@ const GuestDashboard = () => {
         <div className='dashboard-container'>
           {food.map(data => {
             return (
-              <RecipeCard
-                img={data.recipe_photo}
-                title={data.recipe_name}
-                info={data.prep_time}
-              />
+              <Link to={`/guestrecipe/${data.id}`}>
+                <RecipeCard
+                  img={data.recipe_photo}
+                  title={data.recipe_name}
+                  info={data.prep_time}
+                />
+              </Link>
             );
           })}
         </div>
