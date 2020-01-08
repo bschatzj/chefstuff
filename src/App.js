@@ -12,6 +12,7 @@ import EditInfo from "./components/EditInfo";
 import Footer from "./components/Footer";
 import GuestDashboard from "./components/GuestDashboard";
 import ChefRecipe from "./components/ChefRecipe";
+import GuestRecipe from "./components/GuestRecipe";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Nav from "./components/Nav";
@@ -29,6 +30,7 @@ function App() {
       <Route path="/edit-about/:id" component={EditAbout} />
       <Route path="/edit-info/:id" component={EditInfo} />
       <Route path="/recipe/:id" component={ChefRecipe} />
+      <Route path="/guestrecipe/:id" component={GuestRecipe} />
       <Route path="/guestdashboard" component={GuestDashboard} />
       {/* <Footer /> */}
     </div>
