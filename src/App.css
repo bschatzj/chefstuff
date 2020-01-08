@@ -36,3 +36,78 @@
     transform: rotate(360deg);
   }
 }
+
+.closed {
+  display: none;
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  background-color: lightgreen;
+  width: 50%;
+  height: 40%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+}
+
+.editForm {
+  height: 100%;
+}
+
+.editModal {
+  height: 80%;
+  display: flex;
+  position: fixed;
+  background-color: lightgreen;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+  padding: 5%;
+}
+
+.theX {
+  position: fixed ;
+  top: 8%;
+  left: 70%;
+  color: purple;
+  z-index: 100;
+}
+
+.edit-recipe-button{
+  padding: 2%;
+  margin-bottom: 20%;
+  
+}
+
+.chef-recipe-div{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  color: #07fe20;
+  font-size: 3.6rem;
+}
+
+.upperRecipe {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.out{
+  display: none;
+}

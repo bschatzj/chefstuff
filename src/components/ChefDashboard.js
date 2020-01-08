@@ -9,6 +9,12 @@ const ChefDashboard = props => {
   useEffect(() => {
     props.getChef(userId);
   }, []);
+  useEffect(() => {
+    if(!localStorage.getItem('reload')){
+    window.location.reload()
+    localStorage.setItem("reload", "loaded")
+    }
+  }, []);
   console.log(props);
   return (
     <div className="dashboard-body">

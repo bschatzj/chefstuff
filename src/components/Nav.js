@@ -4,19 +4,21 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   function signOut() {
     localStorage.removeItem("token")
+    localStorage.removeItem("reload")
     window.location.reload()
   };
   const [loggedIn, setLoggedIn] = useState(false)
   useEffect(() => {
-    if (localStorage.getItem("token")) { setLoggedIn(true) }
+    if (localStorage.getItem("token")) { setLoggedIn(true) } else { setLoggedIn(false) }
   }, [])
 
-  if (loggedIn) {
-    return (
-      <nav>
-        <h1>
+
+  return (
+    <div>
+      <nav className={loggedIn ? "logged" : "out"}>
+        < h1 >
           <Link to="/"><span>Chef</span>Port<span>.</span></Link>
-        </h1>
+        </h1 >
         <div>
           <div>
             <Link to="/">Profile</Link>
@@ -31,25 +33,42 @@ const Nav = () => {
         <div className="sign-in-nav-button">
           <Link to="/login" onClick={() => { signOut() }}>Sign Out</Link>
         </div>
+      </nav >
+
+      <nav className={ !loggedIn ? "logged" : "out"}>
+        <h1>
+          <Link to="/"><span>Chef</span>Port<span>.</span></Link>
+        </h1>
+        <div>
+          <Link to="/">Recipes</Link>
+        </div>
+        <div className="sign-in-nav-button">
+          <Link to="/login">Sign In</Link>
+        </div>
+        <div className="sign-in-nav-button">
+          <Link to="/">Sign Up</Link>
+        </div>
       </nav>
-    );
-  }
-  if (!loggedIn) return (
-    <nav>
-      <h1>
-        <Link to="/"><span>Chef</span>Port<span>.</span></Link>
-      </h1>
-      <div>
-        <Link to="/">Recipes</Link>
-      </div>
-      <div className="sign-in-nav-button">
-        <Link to="/login">Sign In</Link>
-      </div>
-      <div className="sign-in-nav-button">
-        <Link to="/">Sign Up</Link>
-      </div>
-    </nav>
+
+    </div>
   );
 }
+// if (!loggedIn) return (
+// <nav>
+//   <h1>
+//     <Link to="/"><span>Chef</span>Port<span>.</span></Link>
+//   </h1>
+//   <div>
+//     <Link to="/">Recipes</Link>
+//   </div>
+//   <div className="sign-in-nav-button">
+//     <Link to="/login">Sign In</Link>
+//   </div>
+//   <div className="sign-in-nav-button">
+//     <Link to="/">Sign Up</Link>
+//   </div>
+// </nav>
+// );
+// }
 
 export default Nav;
