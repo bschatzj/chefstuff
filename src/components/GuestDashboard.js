@@ -27,11 +27,6 @@ const guestData = [
   { img: sushi, title: `Sushi Sushi`, info: `30 min` }
 ];
 
-guestData.map(item => {
-  const card = item;
-  return card;
-});
-
 const GuestDashboard = () => {
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
