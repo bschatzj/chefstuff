@@ -118,6 +118,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  padding-bottom: 200px;
   .inner-body {
     // border: 2px solid red;
     width: 70%;
@@ -814,5 +818,4 @@ nav {
    margin: 10px 10px;
    padding: 2px 10px;
  }
-
 }
