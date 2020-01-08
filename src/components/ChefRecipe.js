@@ -169,4 +169,12 @@ const ChefRecipe = (props) => {
     )
 }
 
+      <div className="recipe-buttons-div">
+        <button className="edit-recipe-button">Edit</button>
+        <button className="delete-recipe-button">Delete</button>
+      </div>
+    </div>
+  );
+};
+
 export default ChefRecipe;

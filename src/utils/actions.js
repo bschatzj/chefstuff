@@ -80,7 +80,7 @@ export const addRecipe = newRecipe => dispatch => {
     });
 };
 
-//(get) Get Recipe
+//(get) Get Recipe by id
 export const FETCH_RECIPE_START = "FETCH_RECIPE_START";
 export const FETCH_RECIPE_SUCCESS = "FETCH_RECIPE_SUCCESS";
 export const FETCH_RECIPE_FAILURE = "FETCH_RECIPE_FAILURE";
@@ -97,5 +97,24 @@ export const getRecipe = id => dispatch => {
     })
     .catch(err => {
       dispatch({ type: FETCH_RECIPE_FAILURE, payload: err.response });
+    });
+};
+//(get) Get all Recipes
+export const FETCH_ALL_RECIPE_START = "FETCH_ALL_RECIPE_START";
+export const FETCH_ALL_RECIPE_SUCCESS = "FETCH_ALL_RECIPE_SUCCESS";
+export const FETCH_ALL_RECIPE_FAILURE = "FETCH_ALL_RECIPE_FAILURE";
+
+export const getAllRecipe = () => dispatch => {
+  dispatch({ type: FETCH_ALL_RECIPE_START });
+
+  axiosWithAuth()
+    .get("/recipes")
+    .then(res => {
+      dispatch({ type: FETCH_ALL_RECIPE_SUCCESS, payload: res.data });
+
+      console.log(`this is the response ${res.data}`);
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_ALL_RECIPE_FAILURE, payload: err.response });
     });
 };
