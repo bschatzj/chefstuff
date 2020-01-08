@@ -1,154 +1,48 @@
-import React from "react";
-import Image from "../img/pancakes.jpg";
-import Chicken from "../img/chicken.jpg";
-import Fish from "../img/fish.jpg";
-import Soup from "../img/soup.jpg";
-import Sourdough from "../img/sourdough.jpg";
-import Sushi from "../img/sushi.jpg";
-import Veggie from "../img/veggie.jpg";
-import Corn from "../img/corn.jpg";
-import Choclate from "../img/chocolate.jpg";
-import Kale from "../img/kale.jpg";
-import Steak from "../img/steak-veggies.JPG";
+import React, { useEffect, useState } from "react";
 import { Card, CardImg } from "reactstrap";
+import { connect } from "react-redux";
+import { getRecipe } from "../utils/actions";
+import { Link } from "react-router-dom";
+
 const RecipeImg = props => {
+  const [recepies, setRecepies] = useState();
+  console.log(recepies);
+  const userId = localStorage.getItem("userId");
+  useEffect(() => {
+    props.getRecipe(userId);
+    setRecepies(props.recipe);
+  }, []);
+  console.log("this is props", props);
   return (
     <div>
       <Card>
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Image}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Chicken}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Fish}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Soup}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Sourdough}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Veggie}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Sushi}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Corn}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Choclate}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Kale}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
-        <CardImg
-          style={{
-            width: "150px",
-            height: "150px",
-            borderRadius: "10px",
-            marginTop: "20px",
-            marginRight: "20px"
-          }}
-          src={Steak}
-          class="img-thumbnail"
-          alt="pancakes"
-        />
+        {props.chefInfo &&
+          props.recipe &&
+          props.recipe.map(value => {
+            console.log(value);
+            return (
+              <Link to={`/recipe/${value.id}`}>
+                <CardImg
+                  style={{
+                    width: "230px",
+                    height: "230px",
+                    borderRadius: "10px",
+                    marginTop: "20px",
+                    marginRight: "70px"
+                  }}
+                  src={value.recipe_photo}
+                  class="img-thumbnail"
+                  alt="sushi"
+                />
+              </Link>
+            );
+          })}
       </Card>
     </div>
   );
 };
-export default RecipeImg;
+const mapStateToProps = state => {
+  return state;
+};
+
+export default connect(mapStateToProps, { getRecipe })(RecipeImg);

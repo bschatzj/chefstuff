@@ -95,9 +95,7 @@ const ChefDashboard = props => {
                 ></i>
               </Link>
             </span>
-            <Link to="/chef-recipe">
               <RecipeImg />
-            </Link>
           </div>
         </div>
       </div>

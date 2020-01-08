@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import RecipeCard from './RecipeCard';
-import Footer from './Footer';
-import sourdough from '../img/sourdough.jpg';
-import pancakes from '../img/pancakes.jpg';
-import chocolate from '../img/chocolate.jpg';
-import kale from '../img/kale.jpg';
-import corn from '../img/corn.jpg';
-import veggie from '../img/veggie.jpg';
-import soup from '../img/soup.jpg';
-import steak from '../img/steak-veggies.JPG';
-import chicken from '../img/chicken.jpg';
-import fish from '../img/fish.jpg';
-import sushi from '../img/sushi.jpg';
+import React, { useState, useEffect } from "react";
+import RecipeCard from "./RecipeCard";
+import Footer from "./Footer";
+import sourdough from "../img/sourdough.jpg";
+import pancakes from "../img/pancakes.jpg";
+import chocolate from "../img/chocolate.jpg";
+import kale from "../img/kale.jpg";
+import corn from "../img/corn.jpg";
+import veggie from "../img/veggie.jpg";
+import soup from "../img/soup.jpg";
+import steak from "../img/steak-veggies.JPG";
+import chicken from "../img/chicken.jpg";
+import fish from "../img/fish.jpg";
+import sushi from "../img/sushi.jpg";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const guestData = [
   { img: sourdough, title: `Grandma's Sourdough`, info: `Approx 2 hrs` },
@@ -28,24 +29,40 @@ const guestData = [
 ];
 
 const GuestDashboard = () => {
-  const [search, setSearch] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [food, setFood] = useState([
+    {
+      recipe_name: "",
+      prep_time: "",
+      recipe_photo: ""
+    }
+  ]);
+  const [search, setSearch] = useState("");
   const handleChange = event => {
     setSearch(event.target.value);
   };
   useEffect(() => {
-    const results = guestData.filter(recipe =>
-      recipe.title.toLowerCase().includes(search)
+    const results = food.filter(recipe =>
+      recipe.recipe_name.toLowerCase().includes(search)
     );
-    setSearchResults(results);
+    setFood(results);
     console.log(results);
   }, [search]);
+
+  useEffect(() => {
+    axiosWithAuth()
+      .get("/recipes")
+      .then(res => {
+        setFood(res.data);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
   return (
     <>
-      <div className='dashboard-search'>
+      <div className="dashboard-search">
         <h1
           style={{
-            color: '#07fe20'
+            color: "#07fe20"
           }}
         >
           Featured
@@ -53,27 +70,31 @@ const GuestDashboard = () => {
         <form>
           <input
             style={{
-              padding: '5px',
-              borderRadius: '5px',
+              padding: "5px",
+              borderRadius: "5px",
               border: 0,
-              width: '200px'
+              width: "200px"
             }}
-            autoComplete='off'
+            autoComplete="off"
             value={search}
             onChange={handleChange}
-            type='text'
-            placeholder='Search..'
-            name='search'
+            type="text"
+            placeholder="Search.."
+            name="search"
           />
         </form>
       </div>
 
       <section>
-        <h2 style={{ color: '#fff' }}>Something For Dinner</h2>
-        <div className='dashboard-container'>
-          {searchResults.map(data => {
+        <h2 style={{ color: "#fff" }}>Something For Dinner</h2>
+        <div className="dashboard-container">
+          {food.map(data => {
             return (
-              <RecipeCard img={data.img} title={data.title} info={data.info} />
+              <RecipeCard
+                img={data.recipe_photo}
+                title={data.recipe_name}
+                info={data.prep_time}
+              />
             );
           })}
         </div>
