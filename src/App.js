@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import GuestDashboard from "./components/GuestDashboard";
 import ChefRecipe from "./components/ChefRecipe";
 import GuestRecipe from "./components/GuestRecipe";
+import Brendan from "./components/BrendansSpecialPage"
 
 import PrivateRoute from "./components/PrivateRoute";
 import Nav from "./components/Nav";
@@ -32,6 +33,7 @@ function App() {
       <Route path="/recipe/:id" component={ChefRecipe} />
       <Route path="/guestrecipe/:id" component={GuestRecipe} />
       <Route path="/guestdashboard" component={GuestDashboard} />
+      <Route path="/brendan" component={Brendan} />
       {/* <Footer /> */}
     </div>
   );
