@@ -4,7 +4,7 @@ const RecipeImg = props => {
   useEffect(() => {
     setTimeout(() => {
       props.history.push(`/chefdashboard/${localStorage.getItem("userId")}`);
-    }, 7000);
+    }, 4000);
   }, []);
 
   return (
