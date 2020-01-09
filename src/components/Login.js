@@ -25,7 +25,8 @@ const Login = props => {
         localStorage.setItem("userId", res.data.id);
         console.log(res.data);
         // localStorage.setItem("userId", res.data.user_id);
-        props.history.push(`/chefdashboard/${localStorage.getItem("userId")}`);
+        // props.history.push(`/chefdashboard/${localStorage.getItem("userId")}`);
+        props.history.push("/loading");
       })
       .catch(err => console.log(err));
   };
