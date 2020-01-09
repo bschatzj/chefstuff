@@ -59,7 +59,11 @@ const ChefRecipe = props => {
   return (
     <>
       <div className="chef-recipe-div">
-        <img src={recipe.recipe_photo} />
+        <img
+          className="recipe-image"
+          src={recipe.recipe_photo}
+          alt={recipe.recipe_name}
+        />
         <h2 className="title">{recipe.recipe_name}</h2>
         <div>
           <div className="upperRecipe">
