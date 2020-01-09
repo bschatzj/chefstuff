@@ -20,21 +20,28 @@ import Nav from "./components/Nav";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <Route exact path="/" component={CreateAccount} />
-      <Route exact path="/login" component={Login} />
-      <Route path="/add-recipe" component={CreateRecipe} />
-      <PrivateRoute path="/chefdashboard/:id" component={ChefDashboard} />
-      <Route path="/edit-profile-picture/:id" component={EditProfilePicture} />
-      <Route path="/edit-about/:id" component={EditAbout} />
-      <Route path="/edit-info/:id" component={EditInfo} />
-      <Route path="/recipe/:id" component={ChefRecipe} />
-      <Route path="/guestrecipe/:id" component={GuestRecipe} />
-      <Route path="/guestdashboard" component={GuestDashboard} />
-      <Route path="/loading" component={Loading} />
-      <Footer />
-    </div>
+    <>
+      <div className="App">
+        <Nav />
+        <Route exact path="/" component={CreateAccount} />
+        <Route exact path="/login" component={Login} />
+        <Route path="/add-recipe" component={CreateRecipe} />
+        <PrivateRoute path="/chefdashboard/:id" component={ChefDashboard} />
+        <Route
+          path="/edit-profile-picture/:id"
+          component={EditProfilePicture}
+        />
+        <Route path="/edit-about/:id" component={EditAbout} />
+        <Route path="/edit-info/:id" component={EditInfo} />
+        <Route path="/recipe/:id" component={ChefRecipe} />
+        <Route path="/guestrecipe/:id" component={GuestRecipe} />
+        <Route path="/guestdashboard" component={GuestDashboard} />
+        <Route path="/loading" component={Loading} />
+      </div>
+      <div className="App2">
+        <Footer />
+      </div>
+    </>
   );
 }
 
