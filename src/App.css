@@ -107,3 +107,23 @@
 .out {
   display: none;
 }
+
+.hehe {
+  position: fixed;
+  width: 100%;
+  top: -10% ;
+  height: 120%;
+  background-color: black;
+}
+
+.haha {
+  display: none;
+}
+
+.notTroll {
+  display: none;
+}
+
+.incorect {
+  display: none;
+}
