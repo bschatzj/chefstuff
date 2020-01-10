@@ -44,7 +44,7 @@
 .modal {
   display: flex;
   position: fixed;
-  background-color: lightgreen;
+  background-color: #07fe20;
   width: 50%;
   height: 40%;
   justify-content: center;
@@ -54,6 +54,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: scroll;
+  color: black;
 }
 
 .editForm {
@@ -64,7 +65,7 @@
   height: 80%;
   display: flex;
   position: fixed;
-  background-color: lightgreen;
+  background-color: #07fe20;
   width: 50%;
   justify-content: center;
   align-items: center;
@@ -74,23 +75,18 @@
   transform: translate(-50%, -50%);
   overflow-y: scroll;
   padding: 5%;
+  color: black;
 }
 
 .theX {
-  position: fixed ;
+  position: fixed;
   top: 8%;
   left: 70%;
   color: purple;
   z-index: 100;
 }
 
-.edit-recipe-button{
-  padding: 2%;
-  margin-bottom: 20%;
-  
-}
-
-.chef-recipe-div{
+.chef-recipe-div {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -108,7 +104,7 @@
   align-items: flex-end;
 }
 
-.out{
+.out {
   display: none;
 }
 
